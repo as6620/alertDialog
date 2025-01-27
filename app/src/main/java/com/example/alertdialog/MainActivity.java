@@ -41,11 +41,19 @@ public class MainActivity extends AppCompatActivity {
         layout = (android.widget.LinearLayout) findViewById(R.id.layout);
     }
 
+    /**
+     * Generates a random color and updates the layout background color.
+     */
     public void randomColor() {
         int color = android.graphics.Color.rgb(rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         layout.setBackgroundColor(color);
     }
 
+    /**
+     * Displays a simple alert dialog with text only.
+     *
+     * @param view The view that triggered this method.
+     */
     public void goBtn1(View view) {
         adb = new AlertDialog.Builder(this);
         adb.setTitle("First example: only text");
@@ -54,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
         ad.show();
     }
 
+    /**
+     * Displays an alert dialog with a title, message, and icon.
+     *
+     * @param view The view that triggered this method.
+     */
     public void goBtn2(View view) {
         adb = new AlertDialog.Builder(this);
         adb.setTitle("Alert!!!!");
@@ -63,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
         ad.show();
     }
 
+    /**
+     * Displays an alert dialog with a negative button that closes the dialog.
+     *
+     * @param view The view that triggered this method.
+     */
     public void goBtn3(View view) {
         adb = new AlertDialog.Builder(this);
         adb.setTitle("Alert!!!");
@@ -78,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
         ad.show();
     }
 
+    /**
+     * Displays an alert dialog with positive and negative buttons.
+     * The positive button triggers the random color generator, while the negative button closes the dialog.
+     *
+     * @param view The view that triggered this method.
+     */
     public void goBtn4(View view) {
         adb = new AlertDialog.Builder(this);
         adb.setTitle("Alert!!!");
@@ -100,6 +124,14 @@ public class MainActivity extends AppCompatActivity {
         ad.show();
     }
 
+    /**
+     * Displays an alert dialog with three buttons: positive, neutral, and negative.
+     * The positive button triggers the random color generator,
+     * the negative button resets the layout background to white,
+     * and the neutral button closes the dialog.
+     *
+     * @param view The view that triggered this method.
+     */
     public void goBtn5(View view) {
         adb = new AlertDialog.Builder(this);
         adb.setTitle("Alert!!!");
@@ -125,12 +157,23 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog ad = adb.create();
         ad.show();
     }
-
+    /**
+     * Inflates the options menu for the activity.
+     *
+     * @param menu The options menu in which items are placed.
+     * @return True if the menu is to be displayed.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    /**
+     * Handles item selection from the options menu.
+     *
+     * @param item The menu item that was selected.
+     * @return True if the item was successfully handled.
+     */
     @Override
     public boolean onOptionsItemSelected(@Nullable MenuItem item) {
         int id = item.getItemId();
