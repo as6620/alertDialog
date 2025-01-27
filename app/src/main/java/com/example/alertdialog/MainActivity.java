@@ -1,12 +1,16 @@
 package com.example.alertdialog;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -120,5 +124,20 @@ public class MainActivity extends AppCompatActivity {
         });
         AlertDialog ad = adb.create();
         ad.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@Nullable MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.credits) {
+            Intent si = new Intent(this, Credits.class);
+            startActivity(si);
+        }
+        return true;
     }
 }
