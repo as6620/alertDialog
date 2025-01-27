@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -16,6 +16,7 @@
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="goBtn1"
         android:text="Button1" />
 
     <Space
@@ -26,6 +27,7 @@
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="goBtn2"
         android:text="Button2" />
 
     <Space
@@ -36,6 +38,7 @@
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="goBtn3"
         android:text="Button3" />
 
     <Space
@@ -46,6 +49,7 @@
         android:id="@+id/btn4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="goBtn4"
         android:text="Button4" />
 
     <Space
@@ -56,5 +60,6 @@
         android:id="@+id/btn5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="goBtn5"
         android:text="Button5" />
 </LinearLayout>
