@@ -1,6 +1,7 @@
 package com.example.alertdialog;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -96,6 +97,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goBtn5(View view) {
-
+        adb = new AlertDialog.Builder(this);
+        adb.setTitle("Alert!!!");
+        adb.setMessage("3 buttons");
+        adb.setIcon(R.drawable.ic_launcher_background);
+        adb.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        adb.setPositiveButton("randomColor", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                randomColor();
+            }
+        });
+        adb.setNegativeButton("resetLayoutBackground", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                layout.setBackgroundColor(Color.rgb(255, 255, 255));            }
+        });
+        AlertDialog ad = adb.create();
+        ad.show();
     }
 }
